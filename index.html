@@ -3,234 +3,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alexey's web site | Welcome</title>
-    
-    <!-- Tailwind CSS -->
+    <title>Elon Musk: An Interactive Presentation</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
-        /* Use Inter as the default font */
         body {
             font-family: 'Inter', sans-serif;
+            overflow: hidden; /* Prevent scrolling */
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #4f46e5, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .slide {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .slide.active {
+            display: flex;
+            opacity: 1;
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gray-900 text-white antialiased flex flex-col items-center justify-center h-screen">
 
-    <!-- Header & Navigation -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-blue-600">
-                Alexey's<span class="text-gray-700"> web site</span>
-            </a>
-            <div class="hidden md:flex space-x-6">
-                <a href="#home" class="text-gray-600 hover:text-blue-600 transition duration-300">Home</a>
-                <a href="#services" class="text-gray-600 hover:text-blue-600 transition duration-300">Services</a>
-                <a href="#courses" class="text-gray-600 hover:text-blue-600 transition duration-300">Courses</a>
-                <a href="#about" class="text-gray-600 hover:text-blue-600 transition duration-300">About</a>
-                <a href="#contact" class="text-gray-600 hover:text-blue-600 transition duration-300">Contact</a>
-            </div>
-            <a href="#contact" class="hidden md:block bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition duration-300">Get a Quote</a>
-            <!-- Mobile Menu Button -->
-            <button class="md:hidden focus:outline-none">
-                <i data-lucide="menu" class="w-6 h-6"></i>
-            </button>
-        </nav>
-    </header>
+    <div id="presentation-container" class="w-full h-full max-w-5xl mx-auto flex items-center justify-center p-4">
 
-    <main>
-        <!-- Hero Section -->
-        <section id="home" class="bg-blue-600 text-white">
-            <div class="container mx-auto px-6 py-24 text-center">
-                <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">Driving Innovation, Delivering Results</h1>
-                <p class="text-lg md:text-xl text-blue-100 mb-8 max-w-3xl mx-auto">We help businesses like yours achieve their goals with cutting-edge digital strategies and beautiful, functional websites.</p>
-                <a href="#services" class="bg-white text-blue-600 font-bold px-8 py-4 rounded-full hover:bg-blue-100 transition duration-300 transform hover:scale-105">Our Services</a>
-            </div>
-        </section>
-
-        <!-- Services Section -->
-        <section id="services" class="py-20">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold">What We Offer</h2>
-                    <p class="text-gray-600 mt-2">Tailored solutions to elevate your brand.</p>
+        <!-- Slide 1: Title -->
+        <div class="slide active flex-col items-center justify-center text-center">
+            <header>
+                <div class="flex justify-center items-center mb-6">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Elon_Musk_Royal_Society_%28crop2%29.jpg/1200px-Elon_Musk_Royal_Society_%28crop2%29.jpg" alt="Elon Musk Portrait" class="w-40 h-40 md:w-48 md:h-48 rounded-full border-4 border-indigo-500 shadow-lg object-cover">
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Service Card 1 -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
-                        <div class="bg-blue-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
-                            <i data-lucide="layout-template" class="w-10 h-10 text-blue-600"></i>
+                <h1 class="text-5xl md:text-7xl font-black tracking-tight uppercase">Elon Musk</h1>
+                <p class="text-2xl md:text-3xl font-semibold gradient-text mt-2">Architect of Tomorrow</p>
+                <p class="text-gray-400 mt-4">An Interactive Presentation</p>
+            </header>
+        </div>
+
+        <!-- Slide 2: The Ventures -->
+        <div class="slide flex-col w-full">
+            <div class="bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-700 w-full">
+                <h2 class="text-3xl font-bold mb-6 text-center border-b-2 border-indigo-500 pb-3">The Ventures</h2>
+                <ul class="space-y-6 text-lg">
+                    <li class="flex items-start">
+                        <span class="text-indigo-400 font-bold text-2xl mr-4 mt-1">&#128640;</span>
+                        <div>
+                            <h3 class="font-semibold text-xl">SpaceX</h3>
+                            <p class="text-gray-400">Making humanity a multi-planetary species with reusable rockets.</p>
                         </div>
-                        <h3 class="text-xl font-bold mb-2">Web Development</h3>
-                        <p class="text-gray-600">Creating responsive, high-performance websites that look great on all devices.</p>
-                    </div>
-                    <!-- Service Card 2 -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
-                        <div class="bg-green-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
-                            <i data-lucide="trending-up" class="w-10 h-10 text-green-600"></i>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-indigo-400 font-bold text-2xl mr-4 mt-1">&#128663;</span>
+                        <div>
+                            <h3 class="font-semibold text-xl">Tesla</h3>
+                            <p class="text-gray-400">Accelerating the world's transition to sustainable energy.</p>
                         </div>
-                        <h3 class="text-xl font-bold mb-2">Digital Marketing</h3>
-                        <p class="text-gray-600">Boosting your online presence with SEO, social media, and content marketing strategies.</p>
-                    </div>
-                    <!-- Service Card 3 -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
-                        <div class="bg-purple-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
-                            <i data-lucide="cloud" class="w-10 h-10 text-purple-600"></i>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-indigo-400 font-bold text-2xl mr-4 mt-1">&#129504;</span>
+                        <div>
+                            <h3 class="font-semibold text-xl">Neuralink</h3>
+                            <p class="text-gray-400">Connecting humans and computers with brain-machine interfaces.</p>
                         </div>
-                        <h3 class="text-xl font-bold mb-2">Cloud Solutions</h3>
-                        <p class="text-gray-600">Leveraging cloud infrastructure for scalable, secure, and efficient business operations.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Courses Section -->
-        <section id="courses" class="py-20">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold">Our Courses</h2>
-                    <p class="text-gray-600 mt-2">Invest in your future with our expert-led courses.</p>
-                </div>
-                <div class="flex flex-wrap justify-center items-start gap-8">
-                    <!-- Course Card 1 -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg border-2 border-gray-200 w-full max-w-sm mt-6">
-                        <h3 class="text-2xl font-bold mb-4 text-center">Standard Course</h3>
-                        <p class="text-center text-5xl font-bold mb-6 text-gray-800">€25</p>
-                        <ul class="space-y-3 text-gray-600 mb-8">
-                            <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-blue-500 mr-3"></i>Access to all beginner modules</li>
-                            <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-blue-500 mr-3"></i>Downloadable resources</li>
-                            <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-blue-500 mr-3"></i>Community forum access</li>
-                        </ul>
-                        <a href="#" class="block w-full text-center bg-blue-600 text-white font-bold px-6 py-3 rounded-full hover:bg-blue-700 transition duration-300">Enroll Now</a>
-                    </div>
-
-                    <!-- Course Card 2 (Popular) -->
-                    <div class="bg-white p-8 rounded-lg shadow-2xl border-2 border-blue-600 w-full max-w-sm relative">
-                         <span class="absolute top-0 right-1/2 transform translate-x-1/2 -translate-y-1/2 bg-blue-600 text-white text-sm font-bold px-4 py-1 rounded-full uppercase tracking-wider">Popular</span>
-                        <h3 class="text-2xl font-bold mb-4 text-center text-blue-600">Premium Course</h3>
-                        <div class="text-center mb-6">
-                            <span class="text-5xl font-bold text-gray-800">€69</span>
-                            <span class="text-2xl line-through text-gray-400 ml-2">€189</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-indigo-400 font-bold text-2xl mr-4 mt-1">&#128676;</span>
+                        <div>
+                            <h3 class="font-semibold text-xl">The Boring Company</h3>
+                            <p class="text-gray-400">Alleviating urban traffic congestion with high-speed tunnels.</p>
                         </div>
-                         <ul class="space-y-3 text-gray-600 mb-8">
-                            <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-blue-500 mr-3"></i>All Standard Course features</li>
-                            <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-blue-500 mr-3"></i>Access to advanced modules</li>
-                            <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-blue-500 mr-3"></i>1-on-1 mentorship session</li>
-                            <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-blue-500 mr-3"></i>Certificate of completion</li>
-                        </ul>
-                        <a href="#" class="block w-full text-center bg-blue-600 text-white font-bold px-6 py-3 rounded-full hover:bg-blue-700 transition duration-300 transform hover:scale-105">Enroll Now</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Us Section -->
-        <section id="about" class="bg-gray-100 py-20">
-            <div class="container mx-auto px-6">
-                <div class="flex flex-col md:flex-row items-center gap-12">
-                    <div class="md:w-1/2">
-                        <img src="https://placehold.co/600x400/E2E8F0/4A5568?text=About+Me" alt="About Me" class="rounded-lg shadow-2xl w-full">
-                    </div>
-                    <div class="md:w-1/2">
-                        <h2 class="text-3xl md:text-4xl font-bold mb-4">Who I Am</h2>
-                        <p class="text-gray-600 mb-4">Welcome to my website! I'm Alexey, and this is my space on the internet. I'm a passionate developer, designer, and strategist, working to turn vision into reality.</p>
-                        <p class="text-gray-600 mb-6">I believe in building partnerships, not just projects. Your success is my success, and I'm dedicated to providing exceptional service and measurable results.</p>
-                        <a href="#" class="bg-blue-600 text-white font-bold px-6 py-3 rounded-full hover:bg-blue-700 transition duration-300">Learn More</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Testimonials Section -->
-        <section id="testimonials" class="py-20">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold">What Our Clients Say</h2>
-                    <p class="text-gray-600 mt-2">We're proud to have helped so many amazing businesses.</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Testimonial 1 -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg">
-                        <p class="text-gray-600 italic">"Working with Alexey was a game-changer for our company. His team is professional, creative, and delivered beyond our expectations."</p>
-                        <div class="mt-4">
-                            <p class="font-bold">Michael B.</p>
-                            <p class="text-sm text-gray-500">CEO, TechForward Inc.</p>
-                        </div>
-                    </div>
-                    <!-- Testimonial 2 -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg">
-                        <p class="text-gray-600 italic">"The digital marketing campaign they ran for us resulted in a 200% increase in leads. I couldn't be happier with the results!"</p>
-                        <div class="mt-4">
-                            <p class="font-bold">John Smith</p>
-                            <p class="text-sm text-gray-500">Marketing Director, MarketPeak</p>
-                        </div>
-                    </div>
-                    <!-- Testimonial 3 -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg">
-                        <p class="text-gray-600 italic">"From concept to launch, the web development process was seamless. They truly listened to our needs and created a perfect website."</p>
-                        <div class="mt-4">
-                            <p class="font-bold">Emily White</p>
-                            <p class="text-sm text-gray-500">Founder, Creative Goods</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact/CTA Section -->
-        <section id="contact" class="bg-blue-600 text-white">
-            <div class="container mx-auto px-6 py-20 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Start Your Project?</h2>
-                <p class="text-blue-100 mb-8 max-w-2xl mx-auto">Let's talk about how I can help you achieve your business goals. Get in touch for a free, no-obligation consultation.</p>
-                <a href="mailto:contact@alexeyswebsite.com" class="bg-white text-blue-600 font-bold px-8 py-4 rounded-full hover:bg-blue-100 transition duration-300 transform hover:scale-105">Contact Me Now</a>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white">
-        <div class="container mx-auto px-6 py-12">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-                <div>
-                    <h3 class="text-xl font-bold mb-2">Alexey's web site</h3>
-                    <p class="text-gray-400">Your partner in digital growth.</p>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-2">Quick Links</h3>
-                    <ul>
-                        <li><a href="#about" class="text-gray-400 hover:text-white">About Me</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-white">Services</a></li>
-                        <li><a href="mailto:contact@alexeyswebsite.com" class="text-gray-400 hover:text-white">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-2">Follow Us</h3>
-                    <div class="flex justify-center md:justify-start space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white"><i data-lucide="twitter"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white"><i data-lucide="facebook"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white"><i data-lucide="linkedin"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500 text-sm">
-                <p>&copy; 2024 Alexey's web site. All Rights Reserved.</p>
+                    </li>
+                </ul>
             </div>
         </div>
-    </footer>
+
+        <!-- Slide 3: The Grand Vision -->
+        <div class="slide flex-col w-full">
+             <div class="bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-700 w-full">
+                <h2 class="text-3xl font-bold mb-6 text-center border-b-2 border-pink-500 pb-3">The Grand Vision</h2>
+                <ul class="space-y-6 text-lg">
+                    <li class="flex items-start">
+                        <span class="text-pink-400 mr-4 mt-1 text-2xl">&#10024;</span>
+                        <p class="text-gray-300">Establish a self-sustaining city on Mars.</p>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-pink-400 mr-4 mt-1 text-2xl">&#10024;</span>
+                        <p class="text-gray-300">Transform global energy to be fully sustainable.</p>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-pink-400 mr-4 mt-1 text-2xl">&#10024;</span>
+                        <p class="text-gray-300">Solve AI safety through brain-AI symbiosis.</p>
+                    </li>
+                     <li class="flex items-start">
+                        <span class="text-pink-400 mr-4 mt-1 text-2xl">&#10024;</span>
+                        <p class="text-gray-300">Revolutionize transportation to be fast and electric.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 4: Characteristics & Skills -->
+        <div class="slide flex-col w-full">
+            <div class="bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-700 w-full">
+                <h2 class="text-3xl font-bold mb-6 text-center border-b-2 border-indigo-500 pb-3">Characteristics & Skills</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-center text-md">
+                    <div class="bg-gray-900 p-4 rounded-lg"><p>Visionary Leadership</p></div>
+                    <div class="bg-gray-900 p-4 rounded-lg"><p>Engineering Expertise</p></div>
+                    <div class="bg-gray-900 p-4 rounded-lg"><p>Calculated Risk-Taking</p></div>
+                    <div class="bg-gray-900 p-4 rounded-lg"><p>Unmatched Determination</p></div>
+                    <div class="bg-gray-900 p-4 rounded-lg"><p>Capital Allocation</p></div>
+                    <div class="bg-gray-900 p-4 rounded-lg"><p>Talent Magnetism</p></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: The Mindset -->
+        <div class="slide flex-col w-full">
+            <div class="bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-700 w-full">
+                <h2 class="text-3xl font-bold mb-6 text-center border-b-2 border-pink-500 pb-3">The Mindset</h2>
+                 <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-center text-md">
+                    <div class="bg-gray-900 p-4 rounded-lg"><p>First-Principles Thinking</p></div>
+                    <div class="bg-gray-900 p-4 rounded-lg"><p>Intense Work Ethic</p></div>
+                    <div class="bg-gray-900 p-4 rounded-lg"><p>Bias for Action & Speed</p></div>
+                    <div class="bg-gray-900 p-4 rounded-lg"><p>Embraces Failure as Data</p></div>
+                    <div class="bg-gray-900 p-4 rounded-lg"><p>Physics-Based Reasoning</p></div>
+                    <div class="bg-gray-900 p-4 rounded-lg"><p>Mission-Driven Focus</p></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Quote -->
+        <div class="slide flex-col items-center justify-center text-center">
+            <footer class="p-8">
+                <p class="text-2xl md:text-3xl italic text-gray-400">"When something is important enough, you do it even if the odds are not in your favor."</p>
+                <p class="text-lg text-gray-500 mt-4">- Elon Musk</p>
+            </footer>
+        </div>
+
+    </div>
+
+    <!-- Navigation -->
+    <div class="absolute bottom-0 left-0 right-0 p-4 flex justify-between items-center max-w-5xl mx-auto">
+        <button id="prevBtn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed">
+            &larr; Previous
+        </button>
+        <div id="slide-counter" class="text-gray-400"></div>
+        <button id="nextBtn" class="bg-pink-600 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed">
+            Next &rarr;
+        </button>
+    </div>
 
     <script>
-        // Initialize Lucide Icons
-        lucide.createIcons();
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const slideCounter = document.getElementById('slide-counter');
+        
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+            });
+            slides[index].classList.add('active');
+            
+            // Update slide counter
+            slideCounter.textContent = `${index + 1} / ${slides.length}`;
+
+            // Update button states
+            prevBtn.disabled = index === 0;
+            nextBtn.disabled = index === slides.length - 1;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            if (currentSlide < slides.length - 1) {
+                currentSlide++;
+                showSlide(currentSlide);
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentSlide > 0) {
+                currentSlide--;
+                showSlide(currentSlide);
+            }
+        });
+        
+        // Key navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') {
+                nextBtn.click();
+            } else if (e.key === 'ArrowLeft') {
+                prevBtn.click();
+            }
+        });
+
+        // Initial setup
+        showSlide(currentSlide);
     </script>
+
 </body>
 </html>
+
 
