@@ -3,209 +3,259 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elon Musk: An Interactive Presentation</title>
+    <title>Synapse - Your Company's AI Brain</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            overflow: hidden; /* Prevent scrolling */
         }
-        .gradient-text {
-            background: linear-gradient(90deg, #4f46e5, #ec4899);
+        .gradient-bg {
+            background: linear-gradient(120deg, #0f172a 0%, #1e293b 100%);
+        }
+        .hero-gradient-text {
+            background: linear-gradient(90deg, #7dd3fc, #a78bfa);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .slide {
-            display: none;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
+        .feature-card {
+            background-color: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(51, 65, 85, 0.7);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .slide.active {
-            display: flex;
-            opacity: 1;
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        .logo-wall img {
+            filter: grayscale(100%) opacity(60%);
+            transition: filter 0.3s ease;
+        }
+        .logo-wall img:hover {
+            filter: grayscale(0%) opacity(100%);
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
         }
     </style>
 </head>
-<body class="bg-gray-900 text-white antialiased flex flex-col items-center justify-center h-screen">
+<body class="gradient-bg text-gray-200">
 
-    <div id="presentation-container" class="w-full h-full max-w-5xl mx-auto flex items-center justify-center p-4">
+    <!-- Header -->
+    <header class="fixed w-full bg-slate-900/50 backdrop-blur-sm z-50 border-b border-slate-800">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-sky-400"><path d="M9.5 2.5c2.5 2.5 2.5 6.5 0 9s-6.5 2.5-9 0"/><path d="M14.5 12.5c2.5 2.5 2.5 6.5 0 9s-6.5 2.5-9 0"/><path d="M2.5 9.5c2.5-2.5 6.5-2.5 9 0s2.5 6.5 0 9"/><path d="M12.5 14.5c2.5-2.5 6.5-2.5 9 0s2.5 6.5 0 9"/></svg>
+                <h1 class="text-2xl font-bold text-white">Synapse</h1>
+            </div>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#features" class="text-gray-300 hover:text-sky-400 transition-colors">Features</a>
+                <a href="#integrations" class="text-gray-300 hover:text-sky-400 transition-colors">Integrations</a>
+                <a href="#pricing" class="text-gray-300 hover:text-sky-400 transition-colors">Pricing</a>
+            </nav>
+            <a href="#" class="bg-sky-500 hover:bg-sky-600 text-white font-semibold px-5 py-2 rounded-lg transition-colors shadow-lg shadow-sky-500/20">Request a Demo</a>
+        </div>
+    </header>
 
-        <!-- Slide 1: Title -->
-        <div class="slide active flex-col items-center justify-center text-center">
-            <header>
-                <div class="flex justify-center items-center mb-6">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Elon_Musk_Royal_Society_%28crop2%29.jpg/1200px-Elon_Musk_Royal_Society_%28crop2%29.jpg" alt="Elon Musk Portrait" class="w-40 h-40 md:w-48 md:h-48 rounded-full border-4 border-indigo-500 shadow-lg object-cover">
+    <main>
+        <!-- Hero Section -->
+        <section class="pt-32 pb-20 md:pt-48 md:pb-32">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-4">
+                    Your Company's Knowledge, <br> <span class="hero-gradient-text">Instantly Searchable.</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-8">
+                    Synapse is the AI-powered brain that connects all your company's apps and documents. Stop searching, start finding.
+                </p>
+                <div class="flex justify-center space-x-4">
+                    <a href="#" class="bg-sky-500 hover:bg-sky-600 text-white font-semibold px-8 py-3 rounded-lg transition-colors shadow-lg shadow-sky-500/30 text-lg">Request a Demo</a>
+                    <a href="#features" class="bg-slate-700 hover:bg-slate-600 text-white font-semibold px-8 py-3 rounded-lg transition-colors text-lg">Learn More</a>
                 </div>
-                <h1 class="text-5xl md:text-7xl font-black tracking-tight uppercase">Elon Musk</h1>
-                <p class="text-2xl md:text-3xl font-semibold gradient-text mt-2">Architect of Tomorrow</p>
-                <p class="text-gray-400 mt-4">An Interactive Presentation</p>
-            </header>
-        </div>
 
-        <!-- Slide 2: The Ventures -->
-        <div class="slide flex-col w-full">
-            <div class="bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-700 w-full">
-                <h2 class="text-3xl font-bold mb-6 text-center border-b-2 border-indigo-500 pb-3">The Ventures</h2>
-                <ul class="space-y-6 text-lg">
-                    <li class="flex items-start">
-                        <span class="text-indigo-400 font-bold text-2xl mr-4 mt-1">&#128640;</span>
-                        <div>
-                            <h3 class="font-semibold text-xl">SpaceX</h3>
-                            <p class="text-gray-400">Making humanity a multi-planetary species with reusable rockets.</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-indigo-400 font-bold text-2xl mr-4 mt-1">&#128663;</span>
-                        <div>
-                            <h3 class="font-semibold text-xl">Tesla</h3>
-                            <p class="text-gray-400">Accelerating the world's transition to sustainable energy.</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-indigo-400 font-bold text-2xl mr-4 mt-1">&#129504;</span>
-                        <div>
-                            <h3 class="font-semibold text-xl">Neuralink</h3>
-                            <p class="text-gray-400">Connecting humans and computers with brain-machine interfaces.</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-indigo-400 font-bold text-2xl mr-4 mt-1">&#128676;</span>
-                        <div>
-                            <h3 class="font-semibold text-xl">The Boring Company</h3>
-                            <p class="text-gray-400">Alleviating urban traffic congestion with high-speed tunnels.</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Slide 3: The Grand Vision -->
-        <div class="slide flex-col w-full">
-             <div class="bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-700 w-full">
-                <h2 class="text-3xl font-bold mb-6 text-center border-b-2 border-pink-500 pb-3">The Grand Vision</h2>
-                <ul class="space-y-6 text-lg">
-                    <li class="flex items-start">
-                        <span class="text-pink-400 mr-4 mt-1 text-2xl">&#10024;</span>
-                        <p class="text-gray-300">Establish a self-sustaining city on Mars.</p>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-pink-400 mr-4 mt-1 text-2xl">&#10024;</span>
-                        <p class="text-gray-300">Transform global energy to be fully sustainable.</p>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-pink-400 mr-4 mt-1 text-2xl">&#10024;</span>
-                        <p class="text-gray-300">Solve AI safety through brain-AI symbiosis.</p>
-                    </li>
-                     <li class="flex items-start">
-                        <span class="text-pink-400 mr-4 mt-1 text-2xl">&#10024;</span>
-                        <p class="text-gray-300">Revolutionize transportation to be fast and electric.</p>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Slide 4: Characteristics & Skills -->
-        <div class="slide flex-col w-full">
-            <div class="bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-700 w-full">
-                <h2 class="text-3xl font-bold mb-6 text-center border-b-2 border-indigo-500 pb-3">Characteristics & Skills</h2>
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-center text-md">
-                    <div class="bg-gray-900 p-4 rounded-lg"><p>Visionary Leadership</p></div>
-                    <div class="bg-gray-900 p-4 rounded-lg"><p>Engineering Expertise</p></div>
-                    <div class="bg-gray-900 p-4 rounded-lg"><p>Calculated Risk-Taking</p></div>
-                    <div class="bg-gray-900 p-4 rounded-lg"><p>Unmatched Determination</p></div>
-                    <div class="bg-gray-900 p-4 rounded-lg"><p>Capital Allocation</p></div>
-                    <div class="bg-gray-900 p-4 rounded-lg"><p>Talent Magnetism</p></div>
+                <!-- Hero Image -->
+                <div class="relative mt-16 md:mt-24 max-w-4xl mx-auto floating-animation">
+                     <div class="absolute inset-0 bg-indigo-500/20 blur-3xl rounded-full"></div>
+                     <img src="https://placehold.co/1200x600/1e293b/7dd3fc?text=Synapse+Dashboard+UI&font=inter" alt="Synapse App Dashboard" class="relative rounded-xl shadow-2xl border border-slate-700">
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Slide 5: The Mindset -->
-        <div class="slide flex-col w-full">
-            <div class="bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-700 w-full">
-                <h2 class="text-3xl font-bold mb-6 text-center border-b-2 border-pink-500 pb-3">The Mindset</h2>
-                 <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-center text-md">
-                    <div class="bg-gray-900 p-4 rounded-lg"><p>First-Principles Thinking</p></div>
-                    <div class="bg-gray-900 p-4 rounded-lg"><p>Intense Work Ethic</p></div>
-                    <div class="bg-gray-900 p-4 rounded-lg"><p>Bias for Action & Speed</p></div>
-                    <div class="bg-gray-900 p-4 rounded-lg"><p>Embraces Failure as Data</p></div>
-                    <div class="bg-gray-900 p-4 rounded-lg"><p>Physics-Based Reasoning</p></div>
-                    <div class="bg-gray-900 p-4 rounded-lg"><p>Mission-Driven Focus</p></div>
+        <!-- "How it Works" Section -->
+        <section id="how-it-works" class="py-20 bg-slate-900/70">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Get Answers in 3 Simple Steps</h2>
+                    <p class="text-lg text-gray-400 mt-2">Unlock your company's collective intelligence effortlessly.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-10 text-center">
+                    <div class="flex flex-col items-center">
+                        <div class="flex items-center justify-center h-20 w-20 bg-slate-800 border border-slate-700 rounded-full mb-4">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-sky-400"><path d="M12 22h6a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v5"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M4.5 12.5a1 1 0 0 1-1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1h-1z"/><path d="M4.5 18.5a1 1 0 0 1-1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1h-1z"/><path d="M10 16H8"/><path d="M10 13H8"/></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">1. Connect Your Tools</h3>
+                        <p class="text-gray-400">Securely link Google Drive, Slack, Notion, and more with one-click integrations.</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="flex items-center justify-center h-20 w-20 bg-slate-800 border border-slate-700 rounded-full mb-4">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-sky-400"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><path d="m10 14-2 2 2 2"/><path d="m14 18 2-2-2-2"/></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">2. AI Indexing</h3>
+                        <p class="text-gray-400">Our AI securely scans and understands your content, building a comprehensive knowledge graph.</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="flex items-center justify-center h-20 w-20 bg-slate-800 border border-slate-700 rounded-full mb-4">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-sky-400"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M7 11h8"/></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">3. Ask Anything</h3>
+                        <p class="text-gray-400">Ask questions in natural language and get instant, accurate answers with sources cited.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Stop Wasting Time. Supercharge Productivity.</h2>
+                    <p class="text-lg text-gray-400 mt-2">Synapse is more than a search bar; it's a productivity multiplier.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="feature-card p-8 rounded-xl">
+                        <h3 class="text-xl font-bold text-white mb-3">Instant Answers</h3>
+                        <p class="text-gray-400">Get direct answers instead of a list of links. Synapse summarizes information for you, citing the original sources.</p>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="feature-card p-8 rounded-xl">
+                        <h3 class="text-xl font-bold text-white mb-3">Connect Everything</h3>
+                        <p class="text-gray-400">From documents and spreadsheets to chat messages and project plans, Synapse unifies all your scattered knowledge.</p>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="feature-card p-8 rounded-xl">
+                        <h3 class="text-xl font-bold text-white mb-3">Enterprise-Grade Security</h3>
+                        <p class="text-gray-400">Your data is yours. We use state-of-the-art encryption and never train our models on your company's information.</p>
+                    </div>
+                     <!-- Feature 4 -->
+                    <div class="feature-card p-8 rounded-xl">
+                        <h3 class="text-xl font-bold text-white mb-3">Smart Permissions</h3>
+                        <p class="text-gray-400">Synapse automatically respects your existing file and folder permissions, so users only see what they're supposed to.</p>
+                    </div>
+                     <!-- Feature 5 -->
+                    <div class="feature-card p-8 rounded-xl">
+                        <h3 class="text-xl font-bold text-white mb-3">Faster Onboarding</h3>
+                        <p class="text-gray-400">New hires can self-serve answers to their questions from day one, reducing training time and dependency on others.</p>
+                    </div>
+                     <!-- Feature 6 -->
+                    <div class="feature-card p-8 rounded-xl">
+                        <h3 class="text-xl font-bold text-white mb-3">Discover Insights</h3>
+                        <p class="text-gray-400">Uncover hidden connections and forgotten knowledge by asking broad, exploratory questions about projects and teams.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Integrations Section -->
+        <section id="integrations" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-white">Works With Your Favorite Tools</h2>
+                    <p class="text-lg text-gray-400 mt-2 mb-10">Connect your entire software stack in minutes.</p>
+                    <div class="logo-wall max-w-4xl mx-auto grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-8 items-center">
+                        <img src="https://www.vectorlogo.zone/logos/googledrive/googledrive-icon.svg" alt="Google Drive Logo" class="h-12 mx-auto">
+                        <img src="https://www.vectorlogo.zone/logos/slack/slack-icon.svg" alt="Slack Logo" class="h-12 mx-auto">
+                        <img src="https://www.vectorlogo.zone/logos/notion/notion-icon.svg" alt="Notion Logo" class="h-12 mx-auto">
+                        <img src="https://www.vectorlogo.zone/logos/github/github-icon.svg" alt="GitHub Logo" class="h-12 mx-auto">
+                        <img src="https://www.vectorlogo.zone/logos/jira/jira-icon.svg" alt="Jira Logo" class="h-12 mx-auto">
+                        <img src="https://www.vectorlogo.zone/logos/salesforce/salesforce-icon.svg" alt="Salesforce Logo" class="h-12 mx-auto">
+                        <img src="https://www.vectorlogo.zone/logos/confluence/confluence-icon.svg" alt="Confluence Logo" class="h-12 mx-auto">
+                        <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="Figma Logo" class="h-12 mx-auto">
+                        <img src="https://www.vectorlogo.zone/logos/dropbox/dropbox-icon.svg" alt="Dropbox Logo" class="h-12 mx-auto">
+                        <img src="https://www.vectorlogo.zone/logos/zendesk/zendesk-icon.svg" alt="Zendesk Logo" class="h-12 mx-auto">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="py-20 bg-slate-900/70">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Pricing That Scales With You</h2>
+                    <p class="text-lg text-gray-400 mt-2">Choose the perfect plan for your company's size and needs.</p>
+                </div>
+                <div class="grid lg:grid-cols-3 gap-8 max-w-5xl mx-auto items-start">
+                    <!-- Startup Plan -->
+                    <div class="border border-slate-700 rounded-xl p-8 bg-slate-800">
+                        <h3 class="text-xl font-semibold text-sky-400 mb-2">Startup</h3>
+                        <p class="text-4xl font-bold text-white mb-4">$200 <span class="text-lg font-medium text-gray-400">/ month</span></p>
+                        <p class="text-gray-400 mb-6">For small, agile teams.</p>
+                        <ul class="space-y-4 text-gray-300 mb-8">
+                            <li class="flex items-center"><span class="text-sky-400 mr-3">✓</span> Up to 15 employees</li>
+                            <li class="flex items-center"><span class="text-sky-400 mr-3">✓</span> 5 integrations</li>
+                            <li class="flex items-center"><span class="text-sky-400 mr-3">✓</span> Standard support</li>
+                        </ul>
+                        <a href="#" class="w-full text-center block bg-slate-700 hover:bg-slate-600 text-white font-semibold py-3 rounded-lg transition-colors">Get Started</a>
+                    </div>
+                    <!-- Growth Plan -->
+                    <div class="border-2 border-sky-500 rounded-xl p-8 bg-slate-800/50 shadow-2xl shadow-sky-500/20 transform scale-105">
+                         <p class="text-center font-semibold text-sky-400 bg-sky-500/10 border border-sky-500/30 rounded-full py-1 mb-4">Most Popular</p>
+                        <h3 class="text-xl font-semibold text-sky-300 mb-2">Growth</h3>
+                        <p class="text-4xl font-bold text-white mb-4">$500 <span class="text-lg font-medium text-gray-400">/ month</span></p>
+                        <p class="text-gray-400 mb-6">For growing businesses.</p>
+                        <ul class="space-y-4 text-gray-300 mb-8">
+                            <li class="flex items-center"><span class="text-sky-400 mr-3">✓</span> Up to 50 employees</li>
+                            <li class="flex items-center"><span class="text-sky-400 mr-3">✓</span> Unlimited integrations</li>
+                            <li class="flex items-center"><span class="text-sky-400 mr-3">✓</span> Priority support</li>
+                            <li class="flex items-center"><span class="text-sky-400 mr-3">✓</span> Advanced analytics</li>
+                        </ul>
+                        <a href="#" class="w-full text-center block bg-sky-500 hover:bg-sky-600 text-white font-semibold py-3 rounded-lg transition-colors">Choose Plan</a>
+                    </div>
+                    <!-- Enterprise Plan -->
+                    <div class="border border-slate-700 rounded-xl p-8 bg-slate-800">
+                        <h3 class="text-xl font-semibold text-sky-400 mb-2">Enterprise</h3>
+                        <p class="text-4xl font-bold text-white mb-4">Let's Talk</p>
+                        <p class="text-gray-400 mb-6">For large organizations.</p>
+                        <ul class="space-y-4 text-gray-300 mb-8">
+                            <li class="flex items-center"><span class="text-sky-400 mr-3">✓</span> Custom user limits</li>
+                            <li class="flex items-center"><span class="text-sky-400 mr-3">✓</span> Dedicated support</li>
+                            <li class="flex items-center"><span class="text-sky-400 mr-3">✓</span> SSO & custom security</li>
+                            <li class="flex items-center"><span class="text-sky-400 mr-3">✓</span> On-premise options</li>
+                        </ul>
+                        <a href="#" class="w-full text-center block bg-slate-700 hover:bg-slate-600 text-white font-semibold py-3 rounded-lg transition-colors">Contact Sales</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-24">
+            <div class="container mx-auto px-6 text-center">
+                 <h2 class="text-3xl md:text-4xl font-bold text-white">Ready to Reclaim Your Company's Time?</h2>
+                 <p class="text-lg text-gray-400 mt-2 mb-8 max-w-2xl mx-auto">On average, employees spend 2.5 hours per day searching for information. Give them that time back with Synapse.</p>
+                 <a href="#" class="bg-sky-500 hover:bg-sky-600 text-white font-semibold px-10 py-4 rounded-lg transition-colors shadow-lg shadow-sky-500/30 text-xl">Request Your Free Demo</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 bg-slate-900/50">
+        <div class="container mx-auto px-6 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                <p class="text-gray-400">&copy; 2025 Synapse AI, Inc. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a>
                 </div>
             </div>
         </div>
-
-        <!-- Slide 6: Quote -->
-        <div class="slide flex-col items-center justify-center text-center">
-            <footer class="p-8">
-                <p class="text-2xl md:text-3xl italic text-gray-400">"When something is important enough, you do it even if the odds are not in your favor."</p>
-                <p class="text-lg text-gray-500 mt-4">- Elon Musk</p>
-            </footer>
-        </div>
-
-    </div>
-
-    <!-- Navigation -->
-    <div class="absolute bottom-0 left-0 right-0 p-4 flex justify-between items-center max-w-5xl mx-auto">
-        <button id="prevBtn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed">
-            &larr; Previous
-        </button>
-        <div id="slide-counter" class="text-gray-400"></div>
-        <button id="nextBtn" class="bg-pink-600 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed">
-            Next &rarr;
-        </button>
-    </div>
-
-    <script>
-        const slides = document.querySelectorAll('.slide');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const slideCounter = document.getElementById('slide-counter');
-        
-        let currentSlide = 0;
-
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.classList.remove('active');
-            });
-            slides[index].classList.add('active');
-            
-            // Update slide counter
-            slideCounter.textContent = `${index + 1} / ${slides.length}`;
-
-            // Update button states
-            prevBtn.disabled = index === 0;
-            nextBtn.disabled = index === slides.length - 1;
-        }
-
-        nextBtn.addEventListener('click', () => {
-            if (currentSlide < slides.length - 1) {
-                currentSlide++;
-                showSlide(currentSlide);
-            }
-        });
-
-        prevBtn.addEventListener('click', () => {
-            if (currentSlide > 0) {
-                currentSlide--;
-                showSlide(currentSlide);
-            }
-        });
-        
-        // Key navigation
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowRight') {
-                nextBtn.click();
-            } else if (e.key === 'ArrowLeft') {
-                prevBtn.click();
-            }
-        });
-
-        // Initial setup
-        showSlide(currentSlide);
-    </script>
+    </footer>
 
 </body>
 </html>
-
-
