@@ -57,8 +57,9 @@
                 <a href="#features" class="text-gray-300 hover:text-sky-400 transition-colors">Features</a>
                 <a href="#integrations" class="text-gray-300 hover:text-sky-400 transition-colors">Integrations</a>
                 <a href="#pricing" class="text-gray-300 hover:text-sky-400 transition-colors">Pricing</a>
+                <a href="#signup" class="text-gray-300 hover:text-sky-400 transition-colors">Sign Up</a>
             </nav>
-            <a href="#" class="bg-sky-500 hover:bg-sky-600 text-white font-semibold px-5 py-2 rounded-lg transition-colors shadow-lg shadow-sky-500/20">Request a Demo</a>
+            <a href="#signup" class="bg-sky-500 hover:bg-sky-600 text-white font-semibold px-5 py-2 rounded-lg transition-colors shadow-lg shadow-sky-500/20">Sign Up</a>
         </div>
     </header>
 
@@ -74,7 +75,7 @@
                 </p>
                 <div class="flex justify-center space-x-4">
                     <a href="#" class="bg-sky-500 hover:bg-sky-600 text-white font-semibold px-8 py-3 rounded-lg transition-colors shadow-lg shadow-sky-500/30 text-lg">Request a Demo</a>
-                    <a href="#features" class="bg-slate-700 hover:bg-slate-600 text-white font-semibold px-8 py-3 rounded-lg transition-colors text-lg">Learn More</a>
+                    <a href="#signup" class="bg-slate-700 hover:bg-slate-600 text-white font-semibold px-8 py-3 rounded-lg transition-colors text-lg">Sign Up Now</a>
                 </div>
 
                 <!-- Hero Image -->
@@ -233,6 +234,47 @@
             </div>
         </section>
 
+        <!-- Registration Section -->
+        <section id="signup" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="max-w-2xl mx-auto text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Get Started with Synapse Today</h2>
+                    <p class="text-lg text-gray-400 mt-2 mb-10">Create an account to unlock your company's potential. No credit card required for trial.</p>
+                </div>
+                <div class="max-w-2xl mx-auto bg-slate-800 border border-slate-700 rounded-xl p-8 md:p-12 shadow-2xl">
+                    <form>
+                        <div class="mb-6">
+                            <label for="name" class="block mb-2 text-sm font-medium text-gray-300">Full Name</label>
+                            <input type="text" id="name" class="bg-slate-700 border border-slate-600 text-white text-sm rounded-lg focus:ring-sky-500 focus:border-sky-500 block w-full p-2.5" placeholder="John Doe" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="email" class="block mb-2 text-sm font-medium text-gray-300">Work Email</label>
+                            <input type="email" id="email" class="bg-slate-700 border border-slate-600 text-white text-sm rounded-lg focus:ring-sky-500 focus:border-sky-500 block w-full p-2.5" placeholder="john.doe@company.com" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="company" class="block mb-2 text-sm font-medium text-gray-300">Company Name</label>
+                            <input type="text" id="company" class="bg-slate-700 border border-slate-600 text-white text-sm rounded-lg focus:ring-sky-500 focus:border-sky-500 block w-full p-2.5" placeholder="Your Company Inc." required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="password" class="block mb-2 text-sm font-medium text-gray-300">Password</label>
+                            <input type="password" id="password" class="bg-slate-700 border border-slate-600 text-white text-sm rounded-lg focus:ring-sky-500 focus:border-sky-500 block w-full p-2.5" placeholder="•••••••••" required>
+                        </div>
+                        <button type="submit" class="w-full text-white bg-sky-500 hover:bg-sky-600 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-md px-5 py-3 text-center">Create Free Account</button>
+                        <div class="my-6 flex items-center">
+                            <div class="flex-grow border-t border-slate-600"></div>
+                            <span class="flex-shrink mx-4 text-gray-400">OR</span>
+                            <div class="flex-grow border-t border-slate-600"></div>
+                        </div>
+                        <button type="button" class="w-full text-white bg-slate-700 hover:bg-slate-600 focus:ring-4 focus:outline-none focus:ring-slate-500 font-medium rounded-lg text-md px-5 py-3 text-center flex items-center justify-center">
+                            <svg class="w-5 h-5 mr-2" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="google" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512"><path fill="currentColor" d="M488 261.8C488 403.3 381.5 512 244 512 111.8 512 0 398.2 0 256S111.8 0 244 0c69.8 0 130.8 28.5 173.4 74.5l-68.2 66.3C314.6 112.2 282.4 96 244 96c-83.2 0-150.9 67.2-150.9 150s67.7 150 150.9 150c95.1 0 126.7-75.3 133.5-113.8H244v-87.9h235.9c2.6 13.1 4.1 27.4 4.1 42.8z"></path></svg>
+                            Sign Up with Google
+                        </button>
+                        <p class="text-sm text-gray-400 mt-6 text-center">By signing up, you agree to our <a href="#" class="text-sky-400 hover:underline">Terms of Service</a> and <a href="#" class="text-sky-400 hover:underline">Privacy Policy</a>.</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
         <!-- CTA Section -->
         <section class="py-24">
             <div class="container mx-auto px-6 text-center">
@@ -249,6 +291,7 @@
             <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
                 <p class="text-gray-400">&copy; 2025 Synapse AI, Inc. All rights reserved.</p>
                 <div class="flex space-x-6">
+                    <a href="#signup" class="text-gray-400 hover:text-white transition-colors">Sign Up</a>
                     <a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
                     <a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
                     <a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a>
@@ -259,3 +302,4 @@
 
 </body>
 </html>
+
