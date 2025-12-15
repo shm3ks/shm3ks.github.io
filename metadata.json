@@ -1,0 +1,5 @@
+{
+  "name": "PhysLab: Pulley Dynamics",
+  "description": "A comprehensive physics simulation for pulley systems, featuring a sandbox for mechanical advantage experiments and a detailed Atwood machine analyzer with rotational dynamics, friction, and real-time graphing.",
+  "requestFramePermissions": []
+}
