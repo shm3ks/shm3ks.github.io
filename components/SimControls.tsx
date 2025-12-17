@@ -82,7 +82,7 @@ export const SimControls: React.FC<SimControlsProps> = ({
         setAtwoodState(s => ({ 
             ...s, ...resetProps, 
             mass1: 2.0, mass2: 3.5, 
-            pulleyMass: 0.5, frictionCoeff: 0.05, pulleyRadius: 0.2 
+            pulleyMass: 0.5, frictionCoeff: 0.00, pulleyRadius: 0.2 
         }));
         break;
       case 'large-radius':
@@ -90,7 +90,7 @@ export const SimControls: React.FC<SimControlsProps> = ({
              ...s, ...resetProps, 
              mass1: 2.0, mass2: 3.5, 
              pulleyMass: 2.0, 
-             frictionCoeff: 0.05, pulleyRadius: 0.5 
+             frictionCoeff: 0.00, pulleyRadius: 0.5 
          }));
         break;
     }
@@ -364,7 +364,6 @@ export const SimControls: React.FC<SimControlsProps> = ({
               <h3 className="text-xs font-bold text-slate-800 dark:text-slate-200 uppercase mb-2 border-b border-slate-200 dark:border-slate-700 pb-1">Properties</h3>
               <Slider label="Pulley Mass" value={atwoodState.pulleyMass} min={0.1} max={20} step={0.1} unit="kg" onChange={(v: number) => setAtwoodState(s => ({ ...s, pulleyMass: v }))}/>
               <Slider label="Radius" value={atwoodState.pulleyRadius} min={0.1} max={1.0} step={0.1} unit="m" onChange={(v: number) => setAtwoodState(s => ({ ...s, pulleyRadius: v }))}/>
-              <Slider label="Friction (k)" value={atwoodState.frictionCoeff} min={0.0} max={1.0} step={0.01} unit="" onChange={(v: number) => setAtwoodState(s => ({ ...s, frictionCoeff: v }))}/>
             </div>
           </>
         )}
@@ -409,7 +408,6 @@ export const SimControls: React.FC<SimControlsProps> = ({
             <div className="mb-6">
                <h3 className="text-xs font-bold text-slate-800 dark:text-slate-200 uppercase mb-2 border-b border-slate-200 dark:border-slate-700 pb-1">Params</h3>
                <Slider label="Effort Force" value={sandboxState.effortForce} min={10} max={1000} step={10} unit="N" onChange={(v: number) => setSandboxState(s => ({ ...s, effortForce: v }))}/>
-               <Slider label="System Friction" value={sandboxState.friction} min={0.0} max={1.0} step={0.01} unit="coeff" onChange={(v: number) => setSandboxState(s => ({ ...s, friction: v }))}/>
             </div>
           </>
         )}
