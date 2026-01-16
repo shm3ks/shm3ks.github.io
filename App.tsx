@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { AtwoodState, SandboxState, SimulationType, HistoryPoint, RealityMode, Theme } from './types';
 import { updateAtwoodPhysics, updateSandboxPhysics } from './services/physicsEngine';
@@ -40,6 +39,7 @@ const INITIAL_SANDBOX: SandboxState = {
   effortForce: 50, 
   loadPosition: 80, 
   loadVelocity: 0,
+  loadAcceleration: 0,
   isDragging: false,
   selectedId: null,
   friction: 0.00,
@@ -92,7 +92,6 @@ function App() {
       const deltaTime = (time - lastTimeRef.current) / 1000;
       
       // Calculate scaled physics time step
-      // Cap maximum delta at 0.05 (20fps min) to prevent physics explosions on lag
       const rawDt = Math.min(deltaTime, 0.05); 
       const dt = rawDt * timeScale;
 
@@ -132,12 +131,13 @@ function App() {
             
             if (!prev.isBroken && shouldSample) {
                const v = Math.abs(next.loadVelocity) < 0.001 ? 0 : next.loadVelocity;
+               const a = Math.abs(next.loadAcceleration) < 0.001 ? 0 : next.loadAcceleration;
                
                setHistory(h => {
                    const newHistory = [...h, {
                         time: parseFloat((Date.now() / 1000).toFixed(2)), // Relative time would be better, but this works for sandbox stream
                         velocity: parseFloat(v.toFixed(3)),
-                        acceleration: 0, 
+                        acceleration: parseFloat(a.toFixed(3)), 
                         position: parseFloat((next.loadPosition / 10).toFixed(3)) 
                    }];
                    return newHistory.slice(-100);

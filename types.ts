@@ -1,4 +1,3 @@
-
 export type Theme = 'light' | 'dark';
 
 export enum SimulationType {
@@ -109,6 +108,7 @@ export interface SandboxState {
   // Dynamic State
   loadPosition: number; // 0 to 100 (percentage of height)
   loadVelocity: number;
+  loadAcceleration: number; // Current acceleration
   isDragging: boolean; // Is user manually pulling?
   
   // Interaction
