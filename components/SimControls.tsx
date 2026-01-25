@@ -111,6 +111,7 @@ export const SimControls: React.FC<SimControlsProps> = ({
         const load1 = { id: 'load-lift', mass: 10, color: '#ef4444', x: movX, y: 400, vx: 0, vy: 0 };
         const load2 = { id: 'load-pull', mass: 6, color: '#3b82f6', x: fixX + offset, y: 300, vx: 0, vy: 0 };
 
+        // Fix: Added missing loadAcceleration property
         setSandboxState({
             fixedPulleys: [{id: 'fixed-1', x: fixX, y: 50, radius: r}],
             movablePulleys: [{id: 'movable-1', x: movX, y: movY, radius: r}],
@@ -127,7 +128,7 @@ export const SimControls: React.FC<SimControlsProps> = ({
             ],
             ropeConnectionStartId: null,
             ropeBuilderState: { step: 'idle', firstId: null, secondId: null },
-            loadPosition: 80, loadVelocity: 0, isDragging: false, selectedId: null,
+            loadPosition: 80, loadVelocity: 0, loadAcceleration: 0, isDragging: false, selectedId: null,
             ropeMaxTension: 120, // Low enough to break with extra weight
             isBroken: false,
             airResistance: 0.1
@@ -140,6 +141,7 @@ export const SimControls: React.FC<SimControlsProps> = ({
          const f2X = f1X + (r * 2); // 500 (Left side 475 aligns with right side of f1 475)
          const pullX = f2X + r; // 525 (Aligns with right side of f2)
 
+         // Fix: Added missing loadAcceleration property
          setSandboxState({
             fixedPulleys: [
                 {id: 'f1', x: f1X, y: 50, radius: r}, 
@@ -167,7 +169,7 @@ export const SimControls: React.FC<SimControlsProps> = ({
                 {id: 's5', fromId: 'm1', toId: 'load', type: 'direct'}
             ],
              ropeConnectionStartId: null, ropeBuilderState: { step: 'idle', firstId: null, secondId: null },
-             loadPosition: 80, loadVelocity: 0, isDragging: false, ropeMaxTension: 120, isBroken: false,
+             loadPosition: 80, loadVelocity: 0, loadAcceleration: 0, isDragging: false, ropeMaxTension: 120, isBroken: false,
              airResistance: 0.1
          });
     }
